@@ -73,11 +73,7 @@ namespace ImageConverter.Forms
                 }
             }
             // update output path
-            string? firstRowPath = dataGridView1.Rows[0].Cells[2].Value.ToString();
-            string? firstRowExt = dataGridView1.Rows[0].Cells[1].Value.ToString()?.Replace(".","").ToLower();
-            if (string.IsNullOrEmpty(firstRowPath)) return;
-            string? directory = Path.GetDirectoryName(firstRowPath);
-            textBoxOutput.Text = $@"{directory}\{firstRowExt}";
+            
         }
         #endregion
 
@@ -209,5 +205,14 @@ namespace ImageConverter.Forms
 
         #endregion
 
+        private void comboConvertTo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboConvertTo.Text == string.Empty) return;
+            string? firstRowPath = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            if (string.IsNullOrEmpty(firstRowPath)) return;
+            string? directory = Path.GetDirectoryName(firstRowPath);
+            string folderName = comboConvertTo.Text;
+            textBoxOutput.Text = $@"{directory}\{folderName}";
+        }
     }
 }

@@ -98,6 +98,7 @@
             this.comboConvertTo.Name = "comboConvertTo";
             this.comboConvertTo.Size = new System.Drawing.Size(250, 38);
             this.comboConvertTo.TabIndex = 8;
+            this.comboConvertTo.SelectedIndexChanged += new System.EventHandler(this.comboConvertTo_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
