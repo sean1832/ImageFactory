@@ -37,7 +37,7 @@ namespace ImageConverter.Forms
             Actions.CustomTableStyle(dataGridView1);
 
             // combo box setup
-            object[] formatKeys = new OutputExtension().GetFormatKeys();
+            object[] formatKeys = OutputExtension.GetFormatKeys();
             comboConvertTo.Items.AddRange(formatKeys);
         }
         #endregion

@@ -11,7 +11,7 @@ namespace ImageConverter.Class
 {
     internal class OutputExtension
     {
-        public object[] GetFormatKeys()
+        public static object[] GetFormatKeys()
         {
             List<string> format = new List<string>();
             foreach (string item in ImgFormats.Keys)
@@ -21,12 +21,12 @@ namespace ImageConverter.Class
             return format.ToArray();
         }
 
-        public ImageMagick.MagickFormat GetFormatVal(string key)
+        public static ImageMagick.MagickFormat GetFormatVal(string key)
         {
             return ImgFormats[key];
         }
 
-        public Dictionary<string, ImageMagick.MagickFormat> ImgFormats = new Dictionary<string, ImageMagick.MagickFormat>
+        public static Dictionary<string, ImageMagick.MagickFormat> ImgFormats = new Dictionary<string, ImageMagick.MagickFormat>
         {
             {"png", Png},
             {"jpeg", Jpeg},

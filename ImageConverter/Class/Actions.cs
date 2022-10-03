@@ -8,7 +8,7 @@ public class Actions
     public static void ConvertImage(string? inputDir, string outputDir, string? outputName, string outExt, TextBox outputTextBox)
     {
         string outputPath = outputDir + @"\" + outputName + "." + outExt;
-        ImageMagick.MagickFormat format = new OutputExtension().GetFormatVal(outExt);
+        ImageMagick.MagickFormat format = OutputExtension.GetFormatVal(outExt);
         Directory.CreateDirectory(outputTextBox.Text);
         using (var image = new MagickImage(inputDir))
         {
