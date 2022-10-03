@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Immutable;
+using System.Diagnostics;
 using ImageMagick;
 
 namespace ImageConverter.Class;
@@ -13,9 +14,21 @@ public class Actions
         using (var image = new MagickImage(inputDir))
         {
             image.Format = format;
+            if (format == MagickFormat.Ico)
+            {
+                int height = image.BaseHeight;
+                int width = image.BaseWidth;
+
+                (int heigh, int width) newDimension = Utilities.ScaleToTarget(height, width, 256);
+                MessageBox.Show($"scaled width: {newDimension.width}, scaled height: {newDimension.heigh}");
+
+                image.Resize(newDimension.width,newDimension.heigh);
+            }
             image.Write(outputPath);
         }
     }
+
+
 
     public static void UpdateInputExtension(DataGridView dataGridView, ComboBox comboFrom)
     {

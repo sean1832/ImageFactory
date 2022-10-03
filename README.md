@@ -28,7 +28,7 @@ I will try to clean it up at some point) :wink:.
 - `.pdf`
 - `.svg`
 - `.bmp`
-- `.raw`
+- `.raw` -input only
 - `.html`
 - `.jxl`
 - `.rgb`
