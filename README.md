@@ -7,7 +7,6 @@ I will try to clean it up at some point) :wink:.
 ## How to use
 ### Installation
 1. [Download and extract all require files to local machine](https://github.com/sean1832/ImageFactory/tree/master/ImageConverter/_Deploy)
-1. Currently [ghostscript](https://ghostscript.com/releases/gsdnld.html) is required to convert `.ai` file
 ### Opperation 
 1. Open `ImageFactory.exe`
 1. Assign input folder and output folder
@@ -37,4 +36,4 @@ I will try to clean it up at some point) :wink:.
 - More formats
 - "Setting" tab to save user preferences
 ## Bugs
-- Cannot convert .ico if image is larger than 300x300px
+- <s>Cannot convert .ico if image is larger than 300x300px<s>

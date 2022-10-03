@@ -8,6 +8,11 @@ public class Actions
 {
     public static void ConvertImage(string? inputDir, string outputDir, string? outputName, string outExt, TextBox outputTextBox)
     {
+        // set ghostScript directory
+        string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+        MagickNET.SetGhostscriptDirectory(@$"{baseDir}\GS");
+
+
         string outputPath = outputDir + @"\" + outputName + "." + outExt;
         ImageMagick.MagickFormat format = OutputExtension.GetFormatVal(outExt);
         Directory.CreateDirectory(outputTextBox.Text);
@@ -26,8 +31,6 @@ public class Actions
             image.Write(outputPath);
         }
     }
-
-
 
     public static void UpdateInputExtension(DataGridView dataGridView, ComboBox comboFrom)
     {
