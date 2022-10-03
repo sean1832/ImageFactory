@@ -6,8 +6,7 @@ so the source codes are pretty messy.
 I will try to clean it up at some point) :wink:.
 ## How to use
 ### Installation
-1. Download and extract all require files to local machine
-
+1. [Download and extract all require files to local machine](ImageFactory/ImageConverter/_Deploy/)
 ### Opperation 
 1. Open ImageFactory.exe
 1. Assign input folder and output folder
