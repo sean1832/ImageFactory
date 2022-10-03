@@ -12,7 +12,7 @@ I will try to clean it up at some point) :wink:.
 1. Assign input folder and output folder
 1. Alternatively, you can **drag and drop** images directly into the program
 1. Select output and hit convert
-1. Vualá, you just converted all images into your desier format
+1. Vualá, you just converted all images into your desire format
 
 ## Support Formats
 - .png
