@@ -1,5 +1,5 @@
 ﻿# :camera:Image Factory
-A simple Windows Form desktop application able to batch convert varies image formats.
+A simple Windows Form desktop application to batch convert varies image formats.
 
 (This is my earlier program that I wrote when I was learning C#, 
 so the source codes are pretty messy. 
