@@ -14,6 +14,8 @@ I will try to clean it up at some point) :wink:.
 1. Select output and hit convert
 1. Vualá, you just converted all images into your desire format
 
+[convert UI](pictures/Image Convert UI.PNG)
+
 ## Support Formats
 - `.png`
 - `.jpeg`
