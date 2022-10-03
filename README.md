@@ -34,3 +34,5 @@ I will try to clean it up at some point) :wink:.
 ## Comming features
 - More formats including .AI
 - "Setting" tab to save user preferences
+## Bugs
+- Cannot convert .ico if image is larger than 300x300px
