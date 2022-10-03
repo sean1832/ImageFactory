@@ -6,7 +6,7 @@ so the source codes are pretty messy.
 I will try to clean it up at some point) :wink:.
 ## How to use
 ### Installation
-1. [Download and extract all require files to local machine](https://github.com/sean1832/ImageFactory/tree/master/ImageConverter/_Deploy)
+1. [Download and extract all require files to local machine](https://github.com/sean1832/ImageFactory/releases/tag/0.1.0)
 ### Opperation 
 1. Open `ImageFactory.exe`
 1. Assign input folder and output folder
