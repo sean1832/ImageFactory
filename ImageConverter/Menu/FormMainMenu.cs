@@ -1,6 +1,8 @@
 
 using System.Reflection;
+using ImageConverter.Class;
 using ImageMagick;
+
 
 namespace ImageConverter
 {
@@ -20,9 +22,11 @@ namespace ImageConverter
         // =========================== custom function ===========================
         private void Version()
         {
-            string version = @"1.0.0.6";
+            Assembly thisAssem = typeof(FormMainMenu).Assembly;
+            Version ver = thisAssem.GetName().Version;
 
-            labelVersion.Text = $"ver {version}";
+
+            labelVersion.Text = $"v{ver}";
         }
 
         private Color TranslateColor(string hex)
@@ -85,5 +89,9 @@ namespace ImageConverter
             OpenChildForm(new Forms.FormFolder(), sender);
         }
 
+        private void FormMainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
