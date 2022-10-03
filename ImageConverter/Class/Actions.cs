@@ -20,7 +20,6 @@ public class Actions
                 int width = image.BaseWidth;
 
                 (int heigh, int width) newDimension = Utilities.ScaleToTarget(height, width, 256);
-                MessageBox.Show($"scaled width: {newDimension.width}, scaled height: {newDimension.heigh}");
 
                 image.Resize(newDimension.width,newDimension.heigh);
             }
