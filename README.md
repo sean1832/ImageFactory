@@ -14,7 +14,7 @@ I will try to clean it up at some point) :wink:.
 1. Select output and hit convert
 1. Vualá, you just converted all images into your desire format
 
-![Screenshot](https://github.com/sean1832/ImageFactory/blob/e8f03c3cdab1574f389bf98c5e00ce50f5fd6b1f/pictures/Image%20Convert%20UI.PNG)
+![Screenshot](https://github.com/sean1832/ImageFactory/blob/cdf45ca276a36d915cd2e00d66654b0456caba7c/pictures/Image%20Convert%20UI.PNG)
 
 ## Support Formats
 - `.png`
