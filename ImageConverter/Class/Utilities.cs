@@ -75,4 +75,17 @@ public static class Utilities
 
         return uniqueExtensions.ToArray();
     }
+
+    /// <summary>
+    /// Get image base dimensions
+    /// </summary>
+    /// <param name="path">image full path</param>
+    /// <returns></returns>
+    public static (int x, int y) GetImageDimension(string path)
+    {
+        using (var image = new MagickImage(path))
+        {
+            return (image.BaseWidth, image.BaseHeight);
+        }
+    }
 }
