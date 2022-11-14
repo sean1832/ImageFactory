@@ -23,8 +23,15 @@ public static class Utilities
         }
         return dupCheck.Count > 0;
     }
-
-    public static (int height, int width) ScaleToTarget(int baseHeight, int baseWidth, int maxTargetSize)
+    /// <summary>
+    /// scaled image to fit maximum target size.
+    /// </summary>
+    /// <param name="baseHeight">original image size</param>
+    /// <param name="baseWidth">original image size</param>
+    /// <param name="maxTargetSize">new maximum target size</param>
+    /// <returns>dimensions of new image</returns>
+    /// <exception cref="Exception"></exception>
+    public static (int height, int width) ScaleToTargetFit(int baseHeight, int baseWidth, int maxTargetSize)
     {
         int max = Math.Max(baseHeight, baseWidth);
         double scaleFactor = (double)maxTargetSize / (double)max;

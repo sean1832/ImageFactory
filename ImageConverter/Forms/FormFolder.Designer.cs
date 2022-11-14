@@ -33,6 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBot = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxSizeX = new System.Windows.Forms.TextBox();
+            this.comboScale = new System.Windows.Forms.ComboBox();
+            this.buttonResetSize = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.comboConvertTo = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelFrom = new System.Windows.Forms.Label();
@@ -52,8 +58,10 @@
             this.buttonBrowseInput = new System.Windows.Forms.Button();
             this.textBoxInput = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxSizeY = new System.Windows.Forms.TextBox();
             this.panelBot.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,6 +83,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.comboConvertTo);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.labelFrom);
@@ -87,6 +97,72 @@
             this.panel3.Size = new System.Drawing.Size(725, 159);
             this.panel3.TabIndex = 17;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.textBoxSizeY);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.textBoxSizeX);
+            this.panel5.Controls.Add(this.comboScale);
+            this.panel5.Controls.Add(this.buttonResetSize);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(521, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(189, 159);
+            this.panel5.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(85, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 30);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "X";
+            // 
+            // textBoxSizeX
+            // 
+            this.textBoxSizeX.Location = new System.Drawing.Point(0, 74);
+            this.textBoxSizeX.Name = "textBoxSizeX";
+            this.textBoxSizeX.Size = new System.Drawing.Size(71, 23);
+            this.textBoxSizeX.TabIndex = 17;
+            // 
+            // comboScale
+            // 
+            this.comboScale.BackColor = System.Drawing.Color.White;
+            this.comboScale.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboScale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboScale.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboScale.FormattingEnabled = true;
+            this.comboScale.Location = new System.Drawing.Point(0, 0);
+            this.comboScale.Name = "comboScale";
+            this.comboScale.Size = new System.Drawing.Size(189, 38);
+            this.comboScale.TabIndex = 15;
+            this.comboScale.Text = "1";
+            // 
+            // buttonResetSize
+            // 
+            this.buttonResetSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.buttonResetSize.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonResetSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResetSize.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonResetSize.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonResetSize.Location = new System.Drawing.Point(0, 126);
+            this.buttonResetSize.Name = "buttonResetSize";
+            this.buttonResetSize.Size = new System.Drawing.Size(189, 33);
+            this.buttonResetSize.TabIndex = 16;
+            this.buttonResetSize.Text = "Reset Size";
+            this.buttonResetSize.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(710, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(15, 159);
+            this.panel4.TabIndex = 16;
+            // 
             // comboConvertTo
             // 
             this.comboConvertTo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -94,9 +170,9 @@
             this.comboConvertTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboConvertTo.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboConvertTo.FormattingEnabled = true;
-            this.comboConvertTo.Location = new System.Drawing.Point(411, 62);
+            this.comboConvertTo.Location = new System.Drawing.Point(306, 62);
             this.comboConvertTo.Name = "comboConvertTo";
-            this.comboConvertTo.Size = new System.Drawing.Size(250, 38);
+            this.comboConvertTo.Size = new System.Drawing.Size(193, 38);
             this.comboConvertTo.TabIndex = 8;
             this.comboConvertTo.SelectedIndexChanged += new System.EventHandler(this.comboConvertTo_SelectedIndexChanged);
             // 
@@ -104,7 +180,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::ImageFactory.Properties.Resources.Arrow;
-            this.pictureBox1.Location = new System.Drawing.Point(329, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(224, 62);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(76, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,7 +193,7 @@
             this.labelFrom.AutoSize = true;
             this.labelFrom.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelFrom.ForeColor = System.Drawing.Color.White;
-            this.labelFrom.Location = new System.Drawing.Point(74, 40);
+            this.labelFrom.Location = new System.Drawing.Point(25, 40);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(106, 19);
             this.labelFrom.TabIndex = 10;
@@ -131,7 +207,7 @@
             this.checkOverride.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkOverride.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.checkOverride.ForeColor = System.Drawing.SystemColors.Control;
-            this.checkOverride.Location = new System.Drawing.Point(411, 106);
+            this.checkOverride.Location = new System.Drawing.Point(306, 106);
             this.checkOverride.Name = "checkOverride";
             this.checkOverride.Size = new System.Drawing.Size(113, 19);
             this.checkOverride.TabIndex = 12;
@@ -145,9 +221,9 @@
             this.comboConvertFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboConvertFrom.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboConvertFrom.FormattingEnabled = true;
-            this.comboConvertFrom.Location = new System.Drawing.Point(74, 62);
+            this.comboConvertFrom.Location = new System.Drawing.Point(25, 62);
             this.comboConvertFrom.Name = "comboConvertFrom";
-            this.comboConvertFrom.Size = new System.Drawing.Size(249, 38);
+            this.comboConvertFrom.Size = new System.Drawing.Size(193, 38);
             this.comboConvertFrom.TabIndex = 9;
             this.comboConvertFrom.SelectedIndexChanged += new System.EventHandler(this.comboConvertFrom_SelectedIndexChanged);
             this.comboConvertFrom.TextUpdate += new System.EventHandler(this.comboConvertFrom_TextUpdate);
@@ -158,7 +234,7 @@
             this.labelTo.AutoSize = true;
             this.labelTo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelTo.ForeColor = System.Drawing.Color.White;
-            this.labelTo.Location = new System.Drawing.Point(411, 40);
+            this.labelTo.Location = new System.Drawing.Point(306, 40);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(119, 19);
             this.labelTo.TabIndex = 11;
@@ -348,6 +424,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(832, 273);
             this.dataGridView1.TabIndex = 2;
             // 
+            // textBoxSizeY
+            // 
+            this.textBoxSizeY.Location = new System.Drawing.Point(118, 74);
+            this.textBoxSizeY.Name = "textBoxSizeY";
+            this.textBoxSizeY.Size = new System.Drawing.Size(71, 23);
+            this.textBoxSizeY.TabIndex = 20;
+            // 
             // FormFolder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -362,6 +445,8 @@
             this.panelBot.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -395,5 +480,12 @@
         private Panel panel3;
         private Panel panel2;
         private Panel panel1;
+        private Panel panel5;
+        private TextBox textBoxSizeX;
+        private ComboBox comboScale;
+        private Button buttonResetSize;
+        private Panel panel4;
+        private Label label2;
+        private TextBox textBoxSizeY;
     }
 }

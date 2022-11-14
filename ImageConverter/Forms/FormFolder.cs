@@ -61,6 +61,7 @@ namespace ImageConverter.Forms
 
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
             foreach (var filePath in files)
+
             {
                 string fileName = Path.GetFileNameWithoutExtension(filePath);
                 string fileExt = Path.GetExtension(filePath);
@@ -165,18 +166,7 @@ namespace ImageConverter.Forms
 
                     if (checkOverride.CheckState == CheckState.Unchecked)
                     {
-                        // if duplicate file exist, rename accordingly 
-                        int count = 1;
-                        string fullOutPath = outputDir + @"\" + fileName + "." + outputExt;
-
-                        string newPath = fullOutPath;
-                        string? newFileName = fileName;
-                        while (File.Exists(newPath))
-                        {
-                            string? tempFileName = $"{fileName}_({count++})";
-                            newPath = outputDir + @"\" + tempFileName + "." + outputExt;
-                            newFileName = tempFileName;
-                        }
+                        string newFileName = RenameDuplicateFiles(outputDir, fileName, outputExt);
                         Actions.ConvertImage(inputPath, outputDir, newFileName, outputExt, textBoxOutput);
                     }
                     else
@@ -202,9 +192,6 @@ namespace ImageConverter.Forms
             }
 
         }
-
-        #endregion
-
         private void comboConvertTo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboConvertTo.Text == string.Empty) return;
@@ -214,5 +201,29 @@ namespace ImageConverter.Forms
             string folderName = comboConvertTo.Text;
             textBoxOutput.Text = $@"{directory}\{folderName}";
         }
+        #endregion
+
+        #region Private Functions
+
+        private string RenameDuplicateFiles(string outputDir, string fileName, string outputExt)
+        {
+            // if duplicate file exist, rename accordingly 
+            int count = 1;
+            string fullOutPath = outputDir + @"\" + fileName + "." + outputExt;
+
+            string newPath = fullOutPath;
+            string? newFileName = fileName;
+            while (File.Exists(newPath))
+            {
+                string? tempFileName = $"{fileName}_({count++})";
+                newPath = outputDir + @"\" + tempFileName + "." + outputExt;
+                newFileName = tempFileName;
+            }
+
+            return newFileName;
+        }
+        
+
+        #endregion
     }
 }
