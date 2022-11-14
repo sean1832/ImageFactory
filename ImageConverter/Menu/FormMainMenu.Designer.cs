@@ -52,7 +52,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 484);
+            this.panelMenu.Size = new System.Drawing.Size(200, 589);
             this.panelMenu.TabIndex = 0;
             // 
             // button1
@@ -131,14 +131,14 @@
             this.panelWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWorkspace.Location = new System.Drawing.Point(200, 0);
             this.panelWorkspace.Name = "panelWorkspace";
-            this.panelWorkspace.Size = new System.Drawing.Size(842, 484);
+            this.panelWorkspace.Size = new System.Drawing.Size(1000, 589);
             this.panelWorkspace.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::ImageFactory.Properties.Resources.LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(107, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(186, 170);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(633, 220);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -149,11 +149,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 484);
+            this.ClientSize = new System.Drawing.Size(1200, 589);
             this.Controls.Add(this.panelWorkspace);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1058, 523);
+            this.MinimumSize = new System.Drawing.Size(1200, 628);
             this.Name = "FormMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Image Factory";
