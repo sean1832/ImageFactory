@@ -34,8 +34,9 @@ I will try to clean it up at some point) :wink:.
 - `.jxl`
 - `.rgb`
 - `.rgba`
-## Comming features
+## What's comming next
 - More formats
 - "Setting" tab to save user preferences
+- add option to scale image
 ## Bugs
 - <s>Cannot convert .ico if image is larger than 300x300px<s>
