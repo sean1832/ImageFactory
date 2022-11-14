@@ -6,7 +6,7 @@ namespace ImageConverter.Class;
 
 public class Actions
 {
-    public static void ConvertImage(string? inputDir, string outputDir, string? outputName, string outExt, TextBox outputTextBox)
+    public static void ConvertImage(string? inputDir, string outputDir, string? outputName, string outExt, TextBox outputTextBox, string scaleX = "", string scaleY = "")
     {
         // set ghostScript directory
         string baseDir = AppDomain.CurrentDomain.BaseDirectory;
@@ -16,19 +16,43 @@ public class Actions
         string outputPath = outputDir + @"\" + outputName + "." + outExt;
         ImageMagick.MagickFormat format = OutputExtension.GetFormatVal(outExt);
         Directory.CreateDirectory(outputTextBox.Text);
+
+        bool defaultMode = scaleX == "" && scaleY == "" || scaleX == "0" && scaleY == "0";
+
         using (var image = new MagickImage(inputDir))
         {
             image.Format = format;
-            if (format == MagickFormat.Ico)
+            if (defaultMode)
             {
-                int height = image.BaseHeight;
-                int width = image.BaseWidth;
+                if (format == MagickFormat.Ico)
+                {
+                    int height = image.BaseHeight;
+                    int width = image.BaseWidth;
 
-                (int height, int width) newDimension = Utilities.ScaleToTargetFit(height, width, 256);
+                    (int height, int width) newDimension = Utilities.ScaleToTargetFit(height, width, 256);
 
-                image.Resize(newDimension.width,newDimension.height);
+                    image.Resize(newDimension.width, newDimension.height);
+                }
+                image.Write(outputPath);
             }
-            image.Write(outputPath);
+            else
+            {
+                int width = int.Parse(scaleX);
+                int height = int.Parse(scaleY);
+
+                bool icoOversized = width >= 256 && height >= 256;
+
+                if (format == MagickFormat.Ico && icoOversized)
+                {
+                    (int height, int width) newDimension = Utilities.ScaleToTargetFit(height, width, 256);
+                    image.Resize(newDimension.width, newDimension.height);
+                }
+                else
+                {
+                    image.Resize(width, height);
+                }
+                image.Write(outputPath);
+            }
         }
     }
 
