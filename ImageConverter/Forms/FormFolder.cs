@@ -222,8 +222,32 @@ namespace ImageConverter.Forms
 
             return newFileName;
         }
-        
+
 
         #endregion
+
+        private void comboScale_TextUpdated(object sender, EventArgs e)
+        {
+            labelXVal.Text = string.Empty;
+            labelYVal.Text = string.Empty;
+
+            string strScale = comboScale.Text;
+
+
+            if (dataGridView1.Rows.Count == 0) return;
+
+            string inputPath = dataGridView1.Rows[0].Cells[2].Value.ToString();
+            (int x, int y) = Utilities.GetImageDimension(inputPath);
+            (x, y) = Utilities.ScaleImageDimensions(x, y, strScale);
+            labelXVal.Text = x.ToString();
+            labelYVal.Text = y.ToString();
+
+        }
+
+        private void trackBarScale_Scroll(object sender, EventArgs e)
+        {
+            float scale = Utilities.ScrollScale(trackBarScale, 0.1f, 2.5f);
+            comboScale.Text = scale.ToString();
+        }
     }
 }

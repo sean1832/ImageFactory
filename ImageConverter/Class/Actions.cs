@@ -98,4 +98,6 @@ public class Actions
         extColumn.Width = 100;
         pathColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
     }
+
+    
 }

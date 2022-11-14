@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Xml.Schema;
 using ImageMagick;
 using Microsoft.Win32.SafeHandles;
 
@@ -162,4 +163,32 @@ public static class Utilities
 
     #endregion
 
+    public static float ScrollScale(TrackBar trackBar, float minFactor, float maxFactor)
+    {
+        
+
+        int scrollNum = trackBar.Value;
+        int minCount = Math.Abs(trackBar.Minimum);
+        int maxCount = Math.Abs(trackBar.Maximum);
+
+        float positiveInterval = (float)maxFactor / (float)maxCount;
+        float negativeInterval = (1 - (float)minFactor) / (float)minCount;
+
+        float scaleFactor = 0.00f;
+
+        if (scrollNum == 0)
+        {
+            scaleFactor = 1.00f;
+        }
+        else if (scrollNum > 0)
+        {
+            scaleFactor = 1 + ((float)scrollNum * positiveInterval);
+        }
+        else
+        {
+            scaleFactor = 1 + ((float)scrollNum * negativeInterval);
+        }
+
+        return scaleFactor;
+    }
 }
