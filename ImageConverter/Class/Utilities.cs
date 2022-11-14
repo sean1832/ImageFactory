@@ -101,6 +101,18 @@ public static class Utilities
         return (outX, outY);
     }
 
+    public static (int x, int y) ScaleImageDimensions(string strInputX, string strInputY, float scaleFactor)
+    {
+        int inputX = int.Parse(strInputX);
+        int inputY = int.Parse(strInputY);
+
+        int outX = (int)Math.Round(inputX * scaleFactor);
+        int outY = (int)Math.Round(inputY * scaleFactor);
+
+        return (outX, outY);
+    }
+
+
     public static (int x, int y) ScaleImageDimensions(int inputX, int inputY, float scaleFactor)
     {
         int outX = (int)Math.Round(inputX * scaleFactor);
