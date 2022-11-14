@@ -89,8 +89,14 @@ public static class Utilities
         }
     }
 
+    #region ScaleImageDimensions
     public static (int x, int y) ScaleImageDimensions(string strInputX, string strInputY, string strScaleFactor)
     {
+        if (strScaleFactor == string.Empty)
+        {
+            strScaleFactor = "1.0";
+        }
+
         bool xParse = int.TryParse(strInputX, out int inputX);
         bool yParse = int.TryParse(strInputY, out int inputY);
         bool scaleParse = float.TryParse(strScaleFactor, out float scaleFactor);
@@ -127,6 +133,11 @@ public static class Utilities
 
     public static (int x, int y) ScaleImageDimensions(int inputX, int inputY, string strScaleFactor)
     {
+        if (strScaleFactor == string.Empty)
+        {
+            strScaleFactor = "1.0";
+        }
+
         bool scaleParse = float.TryParse(strScaleFactor, out float scaleFactor);
 
         if (!scaleParse)
@@ -148,4 +159,7 @@ public static class Utilities
 
         return (outX, outY);
     }
+
+    #endregion
+
 }
