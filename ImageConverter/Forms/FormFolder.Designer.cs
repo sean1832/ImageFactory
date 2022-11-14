@@ -193,10 +193,17 @@
             this.comboScale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboScale.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboScale.FormattingEnabled = true;
+            this.comboScale.Items.AddRange(new object[] {
+            "0.5",
+            "0.75",
+            "1.0",
+            "1.25",
+            "1.5"});
             this.comboScale.Location = new System.Drawing.Point(0, 0);
             this.comboScale.Name = "comboScale";
             this.comboScale.Size = new System.Drawing.Size(62, 38);
             this.comboScale.TabIndex = 15;
+            this.comboScale.SelectedIndexChanged += new System.EventHandler(this.comboScale_TextUpdated);
             this.comboScale.TextUpdate += new System.EventHandler(this.comboScale_TextUpdated);
             // 
             // panel6

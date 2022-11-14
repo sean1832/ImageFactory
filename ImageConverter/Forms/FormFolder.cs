@@ -167,7 +167,7 @@ namespace ImageConverter.Forms
                     if (checkOverride.CheckState == CheckState.Unchecked)
                     {
                         string newFileName = RenameDuplicateFiles(outputDir, fileName, outputExt);
-                        Actions.ConvertImage(inputPath, outputDir, newFileName, outputExt, textBoxOutput);
+                        Actions.ConvertImage(inputPath, outputDir, newFileName, outputExt, textBoxOutput, labelXVal.Text, labelYVal.Text);
                     }
                     else
                     {
@@ -223,10 +223,7 @@ namespace ImageConverter.Forms
             return newFileName;
         }
 
-
-        #endregion
-
-        private void comboScale_TextUpdated(object sender, EventArgs e)
+        private void updateScaleLable()
         {
             labelXVal.Text = string.Empty;
             labelYVal.Text = string.Empty;
@@ -241,13 +238,20 @@ namespace ImageConverter.Forms
             (x, y) = Utilities.ScaleImageDimensions(x, y, strScale);
             labelXVal.Text = x.ToString();
             labelYVal.Text = y.ToString();
+        }
 
+        #endregion
+
+        private void comboScale_TextUpdated(object sender, EventArgs e)
+        {
+            updateScaleLable();
         }
 
         private void trackBarScale_Scroll(object sender, EventArgs e)
         {
             float scale = Utilities.ScrollScale(trackBarScale, 0.1f, 2.5f);
             comboScale.Text = scale.ToString();
+            updateScaleLable();
         }
     }
 }
