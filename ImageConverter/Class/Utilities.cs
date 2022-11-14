@@ -91,9 +91,16 @@ public static class Utilities
 
     public static (int x, int y) ScaleImageDimensions(string strInputX, string strInputY, string strScaleFactor)
     {
-        int inputX = int.Parse(strInputX);
-        int inputY = int.Parse(strInputY);
-        float scaleFactor = float.Parse(strScaleFactor);
+        bool xParse = int.TryParse(strInputX, out int inputX);
+        bool yParse = int.TryParse(strInputY, out int inputY);
+        bool scaleParse = float.TryParse(strScaleFactor, out float scaleFactor);
+
+        if (!xParse || !yParse || !scaleParse)
+        {
+            MessageBox.Show(@"Value Error: Enter a valid number", @"Error", MessageBoxButtons.RetryCancel,
+                MessageBoxIcon.Error);
+        }
+
 
         int outX = (int)Math.Round(inputX * scaleFactor);
         int outY = (int)Math.Round(inputY * scaleFactor);
@@ -103,8 +110,14 @@ public static class Utilities
 
     public static (int x, int y) ScaleImageDimensions(string strInputX, string strInputY, float scaleFactor)
     {
-        int inputX = int.Parse(strInputX);
-        int inputY = int.Parse(strInputY);
+        bool xParse = int.TryParse(strInputX, out int inputX);
+        bool yParse = int.TryParse(strInputY, out int inputY);
+
+        if (!xParse || !yParse)
+        {
+            MessageBox.Show(@"Value Error: Enter a valid number", @"Error", MessageBoxButtons.RetryCancel,
+                MessageBoxIcon.Error);
+        }
 
         int outX = (int)Math.Round(inputX * scaleFactor);
         int outY = (int)Math.Round(inputY * scaleFactor);
