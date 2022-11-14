@@ -125,6 +125,21 @@ public static class Utilities
         return (outX, outY);
     }
 
+    public static (int x, int y) ScaleImageDimensions(int inputX, int inputY, string strScaleFactor)
+    {
+        bool scaleParse = float.TryParse(strScaleFactor, out float scaleFactor);
+
+        if (!scaleParse)
+        {
+            MessageBox.Show(@"Value Error: Enter a valid number", @"Error", MessageBoxButtons.RetryCancel,
+                MessageBoxIcon.Error);
+        }
+
+        int outX = (int)Math.Round(inputX * scaleFactor);
+        int outY = (int)Math.Round(inputY * scaleFactor);
+
+        return (outX, outY);
+    }
 
     public static (int x, int y) ScaleImageDimensions(int inputX, int inputY, float scaleFactor)
     {
