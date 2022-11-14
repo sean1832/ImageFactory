@@ -24,9 +24,9 @@ public class Actions
                 int height = image.BaseHeight;
                 int width = image.BaseWidth;
 
-                (int heigh, int width) newDimension = Utilities.ScaleToTargetFit(height, width, 256);
+                (int height, int width) newDimension = Utilities.ScaleToTargetFit(height, width, 256);
 
-                image.Resize(newDimension.width,newDimension.heigh);
+                image.Resize(newDimension.width,newDimension.height);
             }
             image.Write(outputPath);
         }
