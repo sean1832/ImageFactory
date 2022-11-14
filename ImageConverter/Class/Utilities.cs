@@ -88,4 +88,24 @@ public static class Utilities
             return (image.BaseWidth, image.BaseHeight);
         }
     }
+
+    public static (int x, int y) ScaleImageDimensions(string strInputX, string strInputY, string strScaleFactor)
+    {
+        int inputX = int.Parse(strInputX);
+        int inputY = int.Parse(strInputY);
+        float scaleFactor = float.Parse(strScaleFactor);
+
+        int outX = (int)Math.Round(inputX * scaleFactor);
+        int outY = (int)Math.Round(inputY * scaleFactor);
+
+        return (outX, outY);
+    }
+
+    public static (int x, int y) ScaleImageDimensions(int inputX, int inputY, float scaleFactor)
+    {
+        int outX = (int)Math.Round(inputX * scaleFactor);
+        int outY = (int)Math.Round(inputY * scaleFactor);
+
+        return (outX, outY);
+    }
 }
