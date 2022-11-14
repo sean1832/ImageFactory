@@ -142,6 +142,8 @@ namespace ImageConverter.Forms
 
         private void buttonConvert_Click(object sender, EventArgs e)
         {
+            progressBar1.Value = 0;
+
             if (comboConvertTo.Text.ToString() == string.Empty)
             {
                 MessageBox.Show(@"Select a output file type to continue", @"warning", MessageBoxButtons.RetryCancel,
