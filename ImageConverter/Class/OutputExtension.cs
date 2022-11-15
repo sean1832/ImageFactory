@@ -45,6 +45,7 @@ namespace ImageConverter.Class
             {"jxl", Jxl},
             {"rgb", Rgb},
             {"rgba", Rgba},
+            {"webp", WebP}
         };
 
     }
